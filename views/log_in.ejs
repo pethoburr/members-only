@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <form method='POST' action="/members/log-in">
+        <section>
+            <label for="username">Username:</label>
+            <input name="username" required placeholder="Enter username" id="username" autocomplete="username" autofocus>
+        </section>
+        <section>
+            <label for="password">Password:</label>
+            <input id="password" name="password" type="password" required autocomplete="password" placeholder="Enter password">
+        </section>
+        <button type="submit">Log In</button>
+    </form>
+  </body>
+</html>

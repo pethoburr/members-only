@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sign up</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <form method='POST' action="">
+        <h1>Sign up</h1>
+        <section>
+            <label for="first_name">First name:</label>
+            <input name="first_name" required placeholder="Enter first name" id="first_name" autocomplete="first_name" autofocus>
+        </section>
+        <section>
+            <label for="last_name">Lastname:</label>
+            <input name="last_name" required placeholder="Enter last name" id="last_name" autocomplete="last_name" autofocus>
+        </section>
+        <section>
+            <label for="username">Username:</label>
+            <input name="username" required placeholder="Enter username" id="username" autocomplete="username" autofocus>
+        </section>
+        <section>
+            <label for="password">Password:</label>
+            <input id="password" name="password" type="password" required autocomplete="password" placeholder="Enter password">
+        </section>
+        <button type="submit">Sign up</button>
+    </form>
+    <%= errors%>
+  </body>
+</html>
