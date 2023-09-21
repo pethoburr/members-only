@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Create post</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <form method='POST' action="">
+        <section>
+            <label for="title">Title:</label>
+            <input name="title" required placeholder="Enter title" id="title" autocomplete="title" autofocus>
+        </section>
+        <section>
+            <label for="text">Text:</label>
+            <input id="text" name="text" type="text" required autocomplete="text" placeholder="Enter text">
+        </section>
+        <button type="submit">Post</button>
+    </form>
+    <%= errors%>
+  </body>
+</html>

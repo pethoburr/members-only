@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Join the club</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <form method='POST' action="">
+        <h3>Who is the best WWE wrestler of all time?</h3>
+        <section>
+            <label for="answer">Answer:</label>
+            <input id="answer" name="answer" type="answer" required autocomplete="answer" placeholder="Enter answer">
+        </section>
+        <button type="submit">Submit</button>
+    </form>
+    <%= errors %>
+  </body>
+</html>

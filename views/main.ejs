@@ -6,10 +6,24 @@
   </head>
   <body>
     <a href="/members/log-out">Log out</a>
+    <% if(!user){ %>
+      <a href="/members/join">Join</a>
+    <% }; %>
     <h1>Posts</h1>
-    <p><%= msgs.title %></p>
-    <p><%= msgs.text %></p>
-    <p><%= msgs.sender %></p>
-    <p><%= msgs.time %></p>
+    <% msgs.map(function(msg) { %>
+      <ul>
+        <li><%= msg.title %></li>
+        <li><%= msg.text %></li>
+        <% if(user){ %>
+          <li><%= msg.time %></li>
+          <li><%= msg.sender.first_name %></li>
+        <% } else { %>
+          <li>HIDDEN</li>
+          <li>HIDDEN</LI>
+        <% } %>
+      </ul>
+    <% }); %>
+    
+    <a href="/members/create">Add post</a>
   </body>
 </html>

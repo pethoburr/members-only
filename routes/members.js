@@ -13,8 +13,6 @@ router.get("/sign-up", user_controller.create_get);
 
 router.post("/sign-up", user_controller.create_post);
 
-router.get("/user", user_controller.member_detail_get);
-
 router.get("/create", msg_controller.create_get);
 
 router.post("/create", msg_controller.create_post);

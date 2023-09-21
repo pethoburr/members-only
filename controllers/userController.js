@@ -1,16 +1,17 @@
 const asyncHandler = require("express-async-handler");
 const User = require("../models/user");
-const Messages = require("../models/messages");
+const Msg = require("../models/messages");
 const { body, validationResult } = require("express-validator");
 const bcrypt = require("bcryptjs");
 
 exports.index = asyncHandler(async (req, res, next) => {
-    res.render("index", { title: "MEMBERS ONLY BITCH", user: req.user });
+    res.render("index", { title: "MEMBERS ONLY BITCH" });
 })
 
 exports.messages_get = asyncHandler(async (req, res, next) => {
-    const messages = await Messages.find().populate("sender").exec();
-    res.render("main", { msgs: messages, user: req.user });
+    const messages = await Msg.find().populate("sender").exec();
+    console.log(req.user);
+    res.render("main", { msgs: messages, user: req.user.member_status });
 })
 
 exports.create_get = asyncHandler(async (req, res, next) => {
@@ -44,7 +45,7 @@ exports.create_post = [
                 last_name: req.body.last_name,
                 username: req.body.username,
                 password: hashedPassword,
-                membership_status: false,
+                member_status: false,
                 admin: false
             })
     
@@ -59,58 +60,44 @@ exports.create_post = [
                 }
                 console.log(req.user);
                 await user.save();
-                res.redirect("/members/home");
+                res.redirect("/members/log-in");
             }
         })
     })
 ];
 
 
-exports.update_get = asyncHandler(async (req, res, next) => {
-    res.send("NOT IMPLEMENTED: home pagen");
-})
-
-exports.update_post = asyncHandler(async (req, res, next) => {
-    res.send("NOT IMPLEMENTED: home pagem");
-})
-
-exports.delete_get = asyncHandler(async (req, res, next) => {
-    res.send("NOT IMPLEMENTED: home pagel");
-})
-
-exports.delete_post = asyncHandler(async (req, res, next) => {
-    res.send("NOT IMPLEMENTED: home pagek");
-})
-
-exports.member_detail_get = asyncHandler(async (req, res, next) => {
-    res.send("NOT IMPLEMENTED: home pagec");
-})
 
 exports.join_get = asyncHandler(async (req, res, next) => {
-    res.send("NOT IMPLEMENTED: home pageu");
+    res.render("join_form", { errors: ""});
 })
 
-exports.join_post = asyncHandler(async (req, res, next) => {
-    res.send("NOT IMPLEMENTED: home pagef");
+exports.join_post = [
+    body("answer", "Incorrect answer")
+        .trim()
+        .toLowerCase()
+        .notEmpty()
+        .matches(/^batista$/i)
+        .escape(),
+    
+    asyncHandler(async (req, res, next) => {
+        const errors = validationResult(req);
+        let user = await User.findById(req.user.id);
+        console.log(user);
+        user.member_status = true;
+
+        if (!errors.isEmpty()) {
+            res.render("join_form", { errors: errors.array()});
+            return;
+        } else {
+            user.save();
+            res.redirect("/members/home");
+        }
+        
 })
+];
 
 exports.log_in_get = asyncHandler(async (req, res, next) => {
     res.render("log_in", { title: "Log In"});
 })
 
-// exports.log_in_post = [
-//     body("username", "Must enter valid username")
-//     .trim()
-//     .isLength({  min: 1 })
-//     .escape(),
-//     body("password", "Usernme or password incorrect")
-//     .trim()
-//     .isLength({ min: 1})
-//     .escape(),
-
-//     asyncHandler(async (req, res, next) => {
-//         const errors = validationResult(req);
-//         const 
-
-// })
-// ];
