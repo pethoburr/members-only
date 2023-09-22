@@ -5,7 +5,7 @@ const { body, validationResult } = require("express-validator");
 const bcrypt = require("bcryptjs");
 
 exports.index = asyncHandler(async (req, res, next) => {
-    res.render("index", { title: "MEMBERS ONLY BITCH" });
+    res.render("index", { title: "Club 1000" });
 })
 
 exports.messages_get = asyncHandler(async (req, res, next) => {
@@ -69,7 +69,7 @@ exports.create_post = [
 
 
 exports.join_get = asyncHandler(async (req, res, next) => {
-    res.render("join_form", { errors: ""});
+    res.render("join_form", { errors: [""]});
 })
 
 exports.join_post = [
@@ -83,7 +83,7 @@ exports.join_post = [
     asyncHandler(async (req, res, next) => {
         const errors = validationResult(req);
         let user = await User.findById(req.user.id);
-        console.log(user);
+        console.log(errors);
         user.member_status = true;
 
         if (!errors.isEmpty()) {

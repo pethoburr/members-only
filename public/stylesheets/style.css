@@ -1,8 +1,134 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+* {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.home {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.form-control:focus {
+  border-color: #8a2be2 !important;
+  box-shadow: 0 0 0 0.25rem rgba(138, 43, 226, 0.25) !important;
+}
+
+.bando {
+  margin: 0;
+  padding-left: 2.3rem;
+}
+
+form {
+  width: 50%;
+}
+
+.btn-primary {
+  background-color: purple !important;
+  margin-top: .5rem !important;
+  border: 1px solid purple !important;
+}
+
+.btn-primary:focus {
+  border-color: #8a2be2 !important;
+  box-shadow: 0 0 0 0.25rem rgba(138, 43, 226, 0.25) !important;
+}
+
+.btn-primary:hover {
+  border-color: #8a2be2 !important;
+  box-shadow: 0 0 0 0.25rem rgba(138, 43, 226, 0.25) !important;
+}
+
+.form-label {
+  color: purple !important;
+}
+
+h2 {
+  color: purple !important;
+  font-size: 3rem;
+}
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.signUp:hover {
+  background-color: purple;
+  color: white;
+}
+
+.navTitle {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 1.2rem;
+  font-size: 2rem;
 }
 
 a {
-  color: #00B7FF;
+  text-decoration: none;
+  color: purple;
+}
+
+strong {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.logIn {
+  border-radius: .5rem;
+  background-color: purple;
+  color: white;
+  padding: .5rem;
+  border: 2px solid purple;
+}
+
+.logIn:hover {
+  border: 2px solid purple;
+  color: purple;
+  background-color: white;
+}
+
+.signUp {
+  border: 2px solid purple;
+  border-radius: .5rem;
+  padding: .5rem;
+}
+
+h1 {
+  padding-left: 2rem;
+  margin: 0;
+  font-size: 3rem;
+  color: purple;
+}
+
+nav {
+  width: 100vw;
+  display: flex;
+  justify-content: baseline;
+  border-bottom: 2px solid purple;
+}
+
+.options {
+  flex-grow: 1;
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem;
+  align-items: center;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100vw;
+  flex-grow: 1;
+  background-image: url("../images/purpshow.webp");
+  background-size: cover;
 }

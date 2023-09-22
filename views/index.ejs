@@ -2,11 +2,21 @@
 <html>
   <head>
     <title><%= title %></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-    <a href="/members/log-in">Log in</a><strong>or</strong><a href="/members/sign-up">Sign up</a>
+  <body class="home">
+    <nav>
+      <a href="/members" class="navTitle">Club 1000</a>
+      <div class="options">
+        <a href="/members/log-in" class="logIn">Log in</a>
+        <strong>or</strong>
+        <a href="/members/sign-up" class="signUp">Sign up</a>
+      </div>
+    </nav>
+    <main>
+      <h1><%= title %></h1>
+      <p class="bando">1000% bro</p>
+    </main>
   </body>
 </html>

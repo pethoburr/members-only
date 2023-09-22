@@ -2,19 +2,22 @@
 <html>
   <head>
     <title><%= title %></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   </head>
-  <body>
+  <body class="formContainer">
+    <h2>Log In</h2>
     <form method='POST' action="/members/log-in">
         <section>
-            <label for="username">Username:</label>
-            <input name="username" required placeholder="Enter username" id="username" autocomplete="username" autofocus>
+            <label for="username" class="form-label">Username:</label>
+            <input name="username" class="form-control" required placeholder="Enter username" id="username" autocomplete="username" autofocus>
         </section>
         <section>
-            <label for="password">Password:</label>
-            <input id="password" name="password" type="password" required autocomplete="password" placeholder="Enter password">
+            <label for="password" class="form-label">Password:</label>
+            <input id="password" class="form-control" name="password" type="password" required autocomplete="password" placeholder="Enter password">
         </section>
-        <button type="submit">Log In</button>
+        <button type="submit" class="btn btn-primary">Log In</button>
     </form>
   </body>
 </html>
