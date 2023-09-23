@@ -58,9 +58,14 @@ h2 {
   align-items: center;
 }
 
-.signUp:hover {
+.signUp:hover, .join:hover {
   background-color: purple;
   color: white;
+}
+
+.add {
+  align-self: flex-start;
+  margin: 1rem;
 }
 
 .navTitle {
@@ -81,7 +86,7 @@ strong {
   padding-right: 1rem;
 }
 
-.logIn {
+.logIn, .logOut, .add {
   border-radius: .5rem;
   background-color: purple;
   color: white;
@@ -89,13 +94,18 @@ strong {
   border: 2px solid purple;
 }
 
-.logIn:hover {
+.msgs {
+  margin: 0;
+  padding: 0;
+}
+
+.logIn:hover, .logOut:hover, .add:hover {
   border: 2px solid purple;
   color: purple;
   background-color: white;
 }
 
-.signUp {
+.signUp, .join {
   border: 2px solid purple;
   border-radius: .5rem;
   padding: .5rem;
@@ -131,4 +141,77 @@ main {
   flex-grow: 1;
   background-image: url("../images/purpshow.webp");
   background-size: cover;
+}
+
+.sender, .time, .hidden {
+  color: gray;
+  font-size: small;
+  font-style: italic;
+}
+
+.text {
+  margin-bottom: .5rem;
+  margin-top: .5rem;
+  font-size: larger;
+}
+
+.title {
+  font-size: smaller;
+}
+
+.msgs {
+  background-color: white;
+  border-radius: 2px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  list-style: none;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+.snt {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+}
+
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+}
+
+.mainNav {
+  display: flex;
+  align-items: baseline;
+  border-bottom: 2px solid rgb(164, 162, 162);
+  box-shadow: rgba(172, 171, 171, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+.mainOptions {
+  flex-grow: 1;
+  justify-content: flex-end ;
+  display: flex;
+  padding: 2px;
+}
+
+.homeLink {
+  padding: 5px;
+}
+
+.mainHome {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background-image: none;
+  background-color: rgb(232, 232, 232);
+}
+
+.mainContainer, .mainNav, .mainHome {
+  width: auto;
 }
