@@ -18,6 +18,7 @@
 .bando {
   margin: 0;
   padding-left: 2.3rem;
+  margin-bottom: 10rem !important;
 }
 
 form {
@@ -97,6 +98,7 @@ strong {
 .msgs {
   margin: 0;
   padding: 0;
+  width: 80%;
 }
 
 .logIn:hover, .logOut:hover, .add:hover {
@@ -114,7 +116,7 @@ strong {
 h1 {
   padding-left: 2rem;
   margin: 0;
-  font-size: 3rem;
+  font-size: 5rem;
   color: purple;
 }
 
@@ -139,7 +141,7 @@ main {
   justify-content: center;
   width: 100vw;
   flex-grow: 1;
-  background-image: url("../images/purpshow.webp");
+  background-image: url("../images/largePink.jpg");
   background-size: cover;
 }
 
@@ -187,9 +189,10 @@ main {
 }
 
 .mainNav {
+  padding: .5rem;
   display: flex;
   align-items: baseline;
-  border-bottom: 2px solid rgb(164, 162, 162);
+  border: none;
   box-shadow: rgba(172, 171, 171, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
 }
 
@@ -197,7 +200,7 @@ main {
   flex-grow: 1;
   justify-content: flex-end ;
   display: flex;
-  padding: 2px;
+  gap: 1rem;
 }
 
 .homeLink {
@@ -209,9 +212,19 @@ main {
   align-items: center;
   justify-content: flex-start;
   background-image: none;
-  background-color: rgb(232, 232, 232);
+  background-color: rgb(239, 239, 239);
 }
 
 .mainContainer, .mainNav, .mainHome {
   width: auto;
+}
+
+@media (max-width: 768px) {
+  main {
+    background-position-x: center;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
 }

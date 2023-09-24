@@ -5,12 +5,12 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 require('dotenv').config();
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
 const membersRouter = require("./routes/members");
 const passport = require("passport");
-const LocalStrategy = require("passport-local");
+const LocalStrategy = require("passport-local").Strategy;
 const User = require("./models/user");
 const session = require("express-session");
+const MongoDBStore = require("connect-mongodb-session")(session);
 const bcrypt = require("bcryptjs");
 
 var app = express();
@@ -18,7 +18,9 @@ var app = express();
 const mongoose = require("mongoose");
 mongoose.set("strictQuery", false);
 
-const mongoDB = process.env.MONGODB_URI;
+const dev_db_url = "mongodb+srv://mpahal123:admin@cluster0.4yyppmb.mongodb.net/?retryWrites=true&w=majority"
+
+const mongoDB = process.env.MONGODB_URI || dev_db_url;
 main().catch((err) => console.log(err));
 async function main() {
   await mongoose.connect(mongoDB);
@@ -56,18 +58,21 @@ try {
 };
 });
 
+const store = new MongoDBStore({ 
+  uri: mongoDB, collection: 'mySessions'
+});
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
-app.use(session({ secret: "wolf", resave: false, saveUninitialized: true }));
+app.use(cookieParser());
+app.use(session({ secret: "cat", resave: false, saveUninitialized: true, store: store }));
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
 app.use('/', indexRouter);
 app.use("/members", membersRouter);
 

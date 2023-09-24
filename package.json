@@ -7,7 +7,9 @@
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
+    "connect-mongodb-session": "^3.1.1",
     "cookie-parser": "~1.4.4",
+    "cookie-session": "^2.0.0",
     "debug": "~2.6.9",
     "dotenv": "^16.3.1",
     "ejs": "~2.6.1",
@@ -16,12 +18,14 @@
     "express-session": "^1.17.3",
     "express-validator": "^7.0.1",
     "http-errors": "~1.6.3",
+    "memorystore": "^1.6.7",
     "mongoose": "^7.5.2",
     "morgan": "~1.9.1",
     "passport": "^0.6.0",
     "passport-local": "^1.0.0"
   },
   "devDependencies": {
+    "@flydotio/dockerfile": "^0.4.10",
     "nodemon": "^3.0.1"
   }
 }

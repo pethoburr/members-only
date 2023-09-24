@@ -51,3 +51,5 @@ exports.delete_get = asyncHandler(async (req, res, next) => {
 exports.delete_post = asyncHandler(async (req, res, next) => {
     res.send("NOT IMPLEMENTED: home page");
 })
+
+// /home/maninder/.fly/bin/flyctl
