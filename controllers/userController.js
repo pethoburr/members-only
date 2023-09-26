@@ -11,7 +11,7 @@ exports.index = asyncHandler(async (req, res, next) => {
 exports.messages_get = asyncHandler(async (req, res, next) => {
     const messages = await Msg.find().populate("sender").exec();
     console.log(req.user);
-    res.render("main", { msgs: messages, user: req.user.member_status });
+    res.render("main", { msgs: messages, user: req.user.member_status, admin: req.user.admin });
 })
 
 exports.create_get = asyncHandler(async (req, res, next) => {

@@ -45,11 +45,14 @@ exports.update_post = asyncHandler(async (req, res, next) => {
 })
 
 exports.delete_get = asyncHandler(async (req, res, next) => {
-    res.send("NOT IMPLEMENTED: home page");
+    console.log(req.params.id);
+    res.render("dlt_msg", );
 })
 
 exports.delete_post = asyncHandler(async (req, res, next) => {
-    res.send("NOT IMPLEMENTED: home page");
+    console.log(`id: ${req.params.id}`);
+    await Msg.findByIdAndRemove(req.params.id);
+    res.redirect("/members/home");
 })
 
 // /home/maninder/.fly/bin/flyctl

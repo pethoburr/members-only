@@ -21,9 +21,9 @@ router.get("/update", msg_controller.update_get);
 
 router.post("/update", msg_controller.update_post);
 
-router.get("/delete", msg_controller.delete_get);
+router.get("/:id/delete", msg_controller.delete_get);
 
-router.post("/delete", msg_controller.delete_post);
+router.post("/:id/delete", msg_controller.delete_post);
 
 router.get("/join", user_controller.join_get);
 

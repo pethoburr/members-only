@@ -9,4 +9,8 @@ const MsgSchema = new Schema({
     sender: { type: Schema.Types.ObjectId, ref: "User", required: true }
 })
 
+MsgSchema.virtual("url").get(function () {
+    return `/members/${this._id}/delete`;
+})
+
 module.exports = mongoose.model("Msg", MsgSchema);

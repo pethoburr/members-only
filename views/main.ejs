@@ -21,6 +21,9 @@
       <ul class="msgs">
         <li class="title"><%= msg.title %></li>
         <li class="text"><%= msg.text %></li>
+        <% if (admin) { %>
+          <a href="<%= msg.url %>" class="dlt">Delete</a>
+        <% }; %>
         <% if(user){ %>
           <div class="snt">
             <li class="time"><%= msg.time %></li>
